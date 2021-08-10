@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+        background-color: #e7e7e7;
+        font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica,
+          Roboto, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        margin: 0;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        background: yellow;
+      }
+
+      .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: 16px;
+      }
+
+      .navbar-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-right: 16px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 18px;
+      }
+      a:hover {
+        color: red;
+
+        box-shadow: 0 0 1em black;
+      }
+      a:active {
+        color: blue;
+      }
+
+      .logo {
+        width: 60px;
+        height: 35px;
+        background-image: url("logo__small.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .carousel {
+        width: 100%;
+        height: 300px;
+        background-image: url("1622837507259-mlbmainslidercreditsdesktop-1600x340.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .tag {
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        font-size: 32px;
+        margin-top: 32px;
+        color: #333;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: Proxima Nova;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .produtos {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+        justify-content: center;
+      }
+      .produto {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+        cursor: pointer;
+      }
+      .produto:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .imagem {
+        width: 250px;
+        height: 250px;
+      }
+      .nome {
+        text-align: center;
+        background-color: white;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      .categorias {
+        display: flex;
+        width: 100%;
+        gap: 40px;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .categoria {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        cursor: pointer;
+        width: 90px;
+      }
+      .imagem2 {
+        background-color: #fff;
+        border-radius: 50%;
+        height: 88px;
+        width: 88px;
+      }
+      .nome2 {
+        color: #4a4a4a;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.2;
+        padding-top: 12px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .imagem2:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .marcas {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+      .marca {
+        display: flex;
+        gap: 32px;
+        border-radius: 6px;
+        background: white;
+        padding: 24px;
+        color: #595959;
+      }
+
+      .marca:nth-child(3) {
+        width: 15%;
+        display: flex;
+        flex-flow: column;
+        gap: 0;
+      }
+
+      .marca:nth-child(3) .marca-img {
+        width: 100px;
+        height: auto;
+        margin: 0px auto 0px auto;
+       
+      }
+      .marca:nth-child(3) .desconto-text {
+        text-align: center;
+      }
+      .marca:nth-child(3) .desconto-text p {
+          font-size: 12px;
+          line-height: 12px;
+      }
+      .marca:nth-child(3) .desconto-text h1 {
+          font-size: 16px;
+          line-height: 16px;
+      }
+      .marca:nth-child(3) .desconto-text h3 {
+          font-size: 14px;
+          line-height: 14px;
+      }
+      .marca:nth-child(2) .desconto-text .marca-img {
+        height: 150px;
+        width: 150px;
+      }
+      .container {
+        margin: 0px auto 0px auto;
+        display: flex;
+        flex-flow: column;
+        width: 1200px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <div class="logo"></div>
+        <a href="www.google.com">Roupas</a>
+        <a href="www.google.com">Carros</a>
+      </div>
+      <div class="navbar-right">
+        <a href="www.google.com">Crie Sua Conta</a>
+        <a href="www.google.com">Login</a>
+        <a href="www.google.com">Carrinho</a>
+      </div>
+    </nav>
+    <div class="carousel"></div>
+    <div class="container">
+      <div class="tag">VOCE PODE SE INTERESSAR</div>
+      <div class="produtos">
+        <div class="produto">
+          <img class="imagem" src="carro 1.webp" />
+          <div class="nome">Flex na cidade</div>
+        </div>
+        <div class="produto">
+          <img class="imagem" src="carro 2.webp" />
+          <div class="nome">Usado confortavel</div>
+        </div>
+        <div class="produto">
+          <img class="imagem" src="carro 3.webp" />
+          <div class="nome">financiado</div>
+        </div>
+        <div class="produto">
+          <img class="imagem" src="carro 4.webp" />
+          <div class="nome">motos</div>
+        </div>
+      </div>
+      <div class="tag">BUSQUE POR NOSSAS CATEGORIAS</div>
+      <div class="categorias">
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_724872-MLA45683787234_042021-G.webp"
+          />
+          <div class="nome2">caminhoes</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_770813-MLA45683797202_042021-G.webp"
+          />
+          <div class="nome2">carros antigos</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_766380-MLA45683745391_042021-G.webp"
+          />
+          <div class="nome2">nautica</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_721807-MLA45683797208_042021-G.webp"
+          />
+          <div class="nome2">onibus</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_636996-MLA45683797213_042021-G.webp"
+          />
+          <div class="nome2">veiculos pesados</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_850111-MLA45683745405_042021-G.webp"
+          />
+          <div class="nome2">motorhomes</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_857473-MLA45683787271_042021-G.webp"
+          />
+          <div class="nome2">consórcios</div>
+        </div>
+        <div class="categoria">
+          <image
+            class="imagem2"
+            src="https://http2.mlstatic.com/D_Q_NP_635794-MLA45683797229_042021-G.webp"
+          />
+          <div class="nome2">outros veiculos</div>
+        </div>
+      </div>
+      <div class="tag">AS MELHORES MARCAS PARA PRESENTEAR</div>
+      <div class="marcas">
+        <div class="marca">
+          <image
+            class="marca-img"
+            src="https://http2.mlstatic.com/D_Q_NP_643081-MLA46823244476_072021-N.webp"
+          />
+          <div class="desconto-text">
+            <p>ATÉ</p>
+            <h1>60% OFF</h1>
+            <h3>AS MELHORES OFERTAS</h3>
+            <a href="">Aproveite</a>
+          </div>
+        </div>
+        <div class="marca">
+          <image
+            class="marca-img"
+            src="https://http2.mlstatic.com/D_Q_NP_716921-MLA46870187828_072021-V.webp"
+          />
+          <div class="desconto-text">
+            <p>ATÉ</p>
+            <h1>30% OFF</h1>
+            <h3>IDEAL PARA SEU PAI</h3>
+            <a href="">Confira</a>
+          </div>
+        </div>
+        <div class="marca">
+          <image
+            class="marca-img"
+            src="https://http2.mlstatic.com/D_Q_NP_676207-MLA46847023345_072021-G.webp"
+          />
+          <div class="desconto-text">
+            <p>ATÉ</p>
+            <h1>40% OFF</h1>
+            <h3>OFERTAS IMPERDIVEIS</h3>
+            <a href="">Aproveite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photogram</title>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #fafafa;
+      }
+      p {
+        margin: 0px !important;
+      }
+      ::-webkit-input-placeholder {
+        text-align: center;
+      }
+
+      .navbar {
+        display: flex;
+        width: 100%;
+        height: 55px;
+        background: #fff;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid #dbdbdb;
+      }
+      .fa-house-user {
+        font-size: 30px;
+        color: black;
+      }
+      .fa-house-user:hover {
+        cursor: pointer;
+      }
+      .search {
+        width: 100%;
+      }
+      .fa-arrow-circle-right {
+        font-size: 30px;
+        color: black;
+      }
+      .fa-arrow-circle-right:hover {
+        cursor: pointer;
+      }
+      .navbar-container {
+        width: 975px;
+        height: 54px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+      }
+      .clicaveis {
+        display: flex;
+        gap: 16px;
+      }
+      .clicaveis a {
+        color: black;
+        text-decoration: none;
+      }
+      .pesquisa {
+        display: flex;
+        gap: 10px;
+        width: 65%;
+      }
+      .container {
+        width: 935px;
+        height: 300px;
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+      }
+      .histories {
+        display: flex;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        background: #fff;
+        padding: 16px 0px;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: scroll;
+      }
+      .user {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 24px;
+      }
+      .fa-user-circle {
+        font-size: 50px;
+      }
+      .name {
+        margin-top: 5px;
+        color: #262626;
+        font-size: 16px;
+      }
+      .perfil {
+        background-color: #fafafa;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        height: 80px;
+      }
+      .name-email {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      }
+      .lado-esquerdo {
+        width: 65%;
+        height: auto;
+      }
+      .lado-direito {
+        width: 35%;
+        height: 600px;
+        text-decoration: none;
+      }
+      .suggestions {
+        color: #635c5c;
+        display: flex;
+        justify-content: space-between;
+      }
+      .lado-direito a {
+        text-decoration: none;
+        color: #0095f6;
+        font-weight: 600;
+      }
+      .amigos {
+        flex-flow: column;
+        display: flex;
+        padding: 10px;
+        gap: 10px;
+      }
+      .amigos .fa-user-circle {
+        font-size: 30px;
+      }
+      .amigo {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      .nao-sei {
+        gap: 3px;
+      }
+      .nao-sei a {
+        color: black;
+      }
+      .nao-sei p {
+        color: gray;
+        font-weight: lighter;
+      }
+      .seguir {
+        display: flex;
+        justify-content: flex-end;
+        height: 40px;
+        align-items: center;
+      }
+      .sei-la2 {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+      }
+      .suggestions a {
+        color: black;
+        font-weight: lighter;
+      }
+      .post {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: 25px;
+        border-radius: 3px;
+        border: 1px solid #dbdbdb;
+        border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+        flex-flow: column;
+      }
+      .post-id {
+        width: 100%;
+        height: 65px;
+      }
+      .post-id-2 {
+        width: auto;
+        margin: 20px;
+        height: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .post-id-quadrado {
+        display: flex;
+        gap: 10px;
+      }
+      .post-id-2 .fa-user-circle {
+        font-size: 30px;
+      }
+      .tres-pontinhos {
+        width: 30px;
+      }
+      .tres-pontinhos:hover {
+        cursor: pointer;
+      }
+      .imagens {
+        width: auto;
+        height: 500px;
+      }
+      .imagem {
+        height: 100%;
+        width: 100%;
+      }
+      .reacts {
+        width: auto;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-items: center;
+      }
+      .botoes {
+        font-size: 30px;
+        gap: 15px;
+        display: flex;
+      }
+      .botoes:hover {
+        cursor: pointer;
+      }
+      .comments {
+        width: auto;
+        height: auto;
+        padding: 10px;
+      }
+      .comments b:hover {
+        cursor: pointer;
+      }
+      .comments a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .comments a:hover {
+        text-decoration: underline;
+      }
+      .comments .fa-user-circle {
+        font-size: 20px;
+      }
+      .likes {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .comment {
+        padding-top: 10px;
+      }
+      .days {
+        font-size: 10px;
+        padding-top: 10px;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .seu-comentario {
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid #dbdbdb;
+        border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+        display: flex;
+        justify-content: space-between;
+      }
+      .seu-comentario a{
+        color: #0095f6;
+        text-decoration: none;
+      }
+      .seu-comentario .fa-smile {
+        font-size: 30px;
+      }
+      .quadradinho-esquerda{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+      }
+      .input-comment{
+        border: none;
+        outline: none;
+      }
+      .quadradinho-direita{
+        align-items: center;
+        display: flex;
+        padding-right: 10px;
+      }
+
+      
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html"><i class="fas fa-house-user"></i></a>
+        <div class="pesquisa">
+          <input placeholder= " &#xF002; PESQUISAR " style="font-family:Arial, FontAwesome"  class="search" type="text" />
+          <i class="fa fa-arrow-circle-right"></i>
+        </div>
+        <div class="clicaveis">
+          <a href="Create Account.html">Crie Sua Conta</a>
+          <a href="Enter.html">Entre</a>
+          <a href="Categories.html">Categorias</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="lado-esquerdo">
+        <div class="histories">
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <p class="name">user-name</p>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-id">
+            <div class="post-id-2">
+              <div class="post-id-quadrado">
+                <i class="fas fa-user-circle"></i>
+                <p class="amo-penis">perfil-do-arrombado</p>
+              </div>
+              <div><p class="tres-pontinhos">...</p></div>
+            </div>
+          </div>
+          <div class="imagens">
+            <img
+              class="imagem"
+              src="Photogram/0a250c8816e7118e07e869ae51c54cc0.jpg"
+            />
+          </div>
+          <div class="reacts">
+            <div class="botoes">
+              <i class="far fa-heart"></i>
+              <i class="far fa-comment"></i>
+              <i class="far fa-paper-plane"></i>
+            </div>
+            <div class="botoes">
+              <i class="fa fa-bookmark-o"></i>
+            </div>
+          </div>
+          <div class="comments">
+            <div class="likes">
+              <i class="fas fa-user-circle"></i>
+              <p>
+                Curtido por <a href="">roseoliveirar_</a> e <b>14 pessoas</b>
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                <a href="http://">sandraoliveiram_</a> Feliz dia dos pais meu
+                pai que Deus continue abençoando grandemente sua vida sempre te
+                amo 💙👏👏👏🙌🙌🙌🙌
+              </p>
+            </div>
+            <p class="days">HÁ 1 DIA</p>
+          </div>
+          <div class="seu-comentario">
+            <div class="quadradinho-esquerda">
+              <i class="far fa-smile"></i>
+              <input placeholder= " Adicione um comentário... " class="input-comment" type="text" />
+            </div>
+            <a href="" class="quadradinho-direita">Publicar</a>
+          </div>
+        </div>
+      </div>
+      <div class="lado-direito">
+        <div class="perfil">
+          <i class="fas fa-user-circle"></i>
+          <div class="name-email">
+            <p class="email">user-name</p>
+            <p class="name">fulano</p>
+          </div>
+          <a href="" class="mudar">Mudar</a>
+        </div>
+        <div class="suggestions">
+          <p>Sugestões para você</p>
+          <a href="" class="ver-tudo">Ver tudo</a>
+        </div>
+        <div class="amigos">
+          <div class="amigo">
+            <div class="sei-la2">
+              <i class="fas fa-user-circle"></i>
+              <div class="nao-sei">
+                <a href="" class="pinto">pinto</a>
+                <p>Segue voce</p>
+              </div>
+            </div>
+            <div><a href="" class="seguir">Seguir</a></div>
+          </div>
+          <div class="amigo">
+            <div class="sei-la2">
+              <i class="fas fa-user-circle"></i>
+              <div class="nao-sei">
+                <a href="" class="pinto">pinto2</a>
+                <p>Segue voce</p>
+              </div>
+            </div>
+            <div><a href="" class="seguir">Seguir</a></div>
+          </div>
+          <div class="amigo">
+            <div class="sei-la2">
+              <i class="fas fa-user-circle"></i>
+              <div class="nao-sei">
+                <a href="" class="pinto">pinto3</a>
+                <p>Segue voce</p>
+              </div>
+            </div>
+            <div><a href="" class="seguir">Seguir</a></div>
+          </div>
+          <div class="amigo">
+            <div class="sei-la2">
+              <i class="fas fa-user-circle"></i>
+              <div class="nao-sei">
+                <a href="" class="pinto">pinto4</a>
+                <p>Segue voce</p>
+              </div>
+            </div>
+            <div><a href="" class="seguir">Seguir</a></div>
+          </div>
+          <div class="amigo">
+            <div class="sei-la2">
+              <i class="fas fa-user-circle"></i>
+              <div class="nao-sei">
+                <a href="" class="pinto">pinto5</a>
+                <p>Segue voce</p>
+              </div>
+            </div>
+            <div><a href="" class="seguir">Seguir</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
